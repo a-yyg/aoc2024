@@ -65,7 +65,7 @@ subReports :: Report -> [Report]
 subReports (Report rs) = [Report r | r <- subLists rs]
 
 isSemiSafe :: Report -> Bool
-isSemiSafe r = isSafe r || any isSafe (subReports r)
+isSemiSafe r = any isSafe (subReports r)
 
 solve2 :: Problem -> Int
 solve2 (Problem rs) = length $ filter id result
